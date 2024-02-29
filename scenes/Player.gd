@@ -12,7 +12,7 @@ var velocity: Vector2 = Vector2()
 func get_input():
 	velocity.x = 0
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
-		velocity.y = jump_speed
+		velocity.y += jump_speed
 	if Input.is_action_pressed("right"):
 		velocity.x += speed
 	if Input.is_action_pressed("left"):
@@ -20,9 +20,9 @@ func get_input():
 
 
 func _physics_process(_delta):
-	velocity.y += delta * GRAVITY
+	velocity.y += _delta * GRAVITY
 	get_input()
-	velocity = move_and_slide(velocity, UP)
+	#velocity = move(velocity, UP) #find way to move rigidbody
 
 
 func _process(_delta):
