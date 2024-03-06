@@ -22,7 +22,7 @@ func get_input():
 func _physics_process(_delta):
 	velocity.y += _delta * GRAVITY
 	get_input()
-	#velocity = move(velocity, UP) #find way to move rigidbody
+	velocity = move_and_slide(velocity, UP) #find way to move rigidbody
 
 
 func _process(_delta):

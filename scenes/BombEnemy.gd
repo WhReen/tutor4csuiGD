@@ -17,7 +17,7 @@ func _on_Node2D_body_entered(body):
 	if body.get_name() == "Player":
 		get_tree().change_scene(str("res://scenes/" + sceneName + ".tscn"))
 	else:
-		body.queue_free()
+		queue_free()
 
 func _physics_process(_delta):
 	print_debug(linear_velocity)

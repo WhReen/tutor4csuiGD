@@ -1,0 +1,303 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_stone.png" type="Texture" id=2]
+[ext_resource path="res://scenes/BombEnemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/kenney_platformerpack/PNG/Particles/brickGrey.png" type="Texture" id=4]
+[ext_resource path="res://scenes/Spawner.gd" type="Script" id=5]
+[ext_resource path="res://assets/Familiar Looking Rocket.png" type="Texture" id=6]
+[ext_resource path="res://scenes/AreaTrigger.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/kenney_platformerpack/PNG/Tiles/window.png" type="Texture" id=8]
+[ext_resource path="res://assets/kenney_platformerpack/PNG/Tiles/signExit.png" type="Texture" id=9]
+[ext_resource path="res://assets/kenney_platformerpack/PNG/Tiles/signRight.png" type="Texture" id=10]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+seed = 98
+octaves = 9
+period = 13.6
+persistence = 0.811
+lacunarity = 0.64
+
+[sub_resource type="NoiseTexture" id=2]
+width = 4076
+height = 2282
+noise = SubResource( 1 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 32, 96 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 128, 0, 96, 96, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 32, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 0, 0, 128, 0, 96, 64, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=14]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=15]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=16]
+points = PoolVector2Array( 0, 0, 64, 64, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=17]
+points = PoolVector2Array( 64, 64, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=18]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=19]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=20]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="TileSet" id=21]
+0/name = "spritesheet_gr_stone.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 1152, 256 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 128, 128 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 3 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 3, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 4, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 5, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 6, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 7, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 8, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 11 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 12 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 13 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 14 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 3, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 15 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 4, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 16 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 5, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 17 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 6, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 18 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 7, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 19 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 8, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 20 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 107.951, 184.379 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -811.0
+margin_top = -1542.0
+margin_right = 3158.0
+margin_bottom = 705.0
+texture = SubResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -13, 49 )
+collision_layer = 3
+collision_mask = 3
+speed = 300
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 192, 107 )
+scale = Vector2( 0.361877, 0.4104 )
+texture = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -214, -933 )
+scale = Vector2( 0.601563, 0.640625 )
+texture = ExtResource( 9 )
+
+[node name="Goal" type="Sprite" parent="."]
+position = Vector2( -390, -994 )
+scale = Vector2( 1.96875, 2.03125 )
+texture = ExtResource( 8 )
+
+[node name="GoalArea" parent="Goal" instance=ExtResource( 7 )]
+position = Vector2( -1.01588, 0.984589 )
+scale = Vector2( 6, 5 )
+sceneName = "WinScreen"
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 21 )
+cell_size = Vector2( 128, 128 )
+format = 1
+tile_data = PoolIntArray( -393220, 0, 65543, -393219, 0, 65543, -393218, 0, 65543, -393217, 0, 65543, -458752, 0, 65540, -327684, 0, 1, -327683, 0, 1, -327682, 0, 1, -327681, 0, 1, -393216, 0, 7, -393215, 0, 65540, -262148, 0, 1, -262147, 0, 1, -262146, 0, 1, -262145, 0, 1, -327680, 0, 1, -327679, 0, 7, -327678, 0, 65540, -327675, 0, 65540, -327672, 0, 65540, -327669, 0, 65540, -327666, 0, 65540, -327663, 0, 65540, -196612, 0, 1, -196611, 0, 1, -196610, 0, 1, -196609, 0, 1, -262144, 0, 1, -262143, 0, 1, -262142, 0, 1, -262139, 0, 1, -262136, 0, 1, -262133, 0, 1, -262130, 0, 1, -262127, 0, 1, -262125, 0, 65541, -262124, 0, 1, -131076, 0, 1, -131075, 0, 1, -131074, 0, 1, -131073, 0, 1, -196608, 0, 1, -196607, 0, 1, -196606, 0, 1, -196591, 0, 1, -196588, 0, 1, -65540, 0, 1, -65539, 0, 1, -65538, 0, 1, -65537, 0, 1, -131072, 0, 1, -131071, 0, 1, -131070, 0, 1, -131055, 0, 1, -131054, 0, 65540, -131052, 0, 1, -65516, 0, 1, 19, 0, 65541, 20, 0, 1, 131071, 0, 65543, 65536, 0, 65543, 65537, 0, 65543, 65538, 0, 65543, 65539, 0, 65543, 65540, 0, 65543, 65541, 0, 65543, 65542, 0, 65543, 65543, 0, 65543, 65544, 0, 65543, 65545, 0, 65543, 65546, 0, 65543, 65547, 0, 65543, 65548, 0, 65543, 65549, 0, 65543, 65550, 0, 65543, 65551, 0, 65543, 65552, 0, 65543, 65553, 0, 65543, 65554, 0, 65543, 65555, 0, 1, 65556, 0, 1, 196607, 0, 1, 131072, 0, 1, 131073, 0, 1, 131074, 0, 1, 131075, 0, 1, 131076, 0, 1, 131077, 0, 1, 131078, 0, 1, 131079, 0, 1, 131080, 0, 1, 131081, 0, 1, 131082, 0, 1, 131083, 0, 1, 131084, 0, 1, 131085, 0, 1, 131086, 0, 1, 131087, 0, 1, 131088, 0, 1, 131089, 0, 1, 131090, 0, 1, 131091, 0, 1, 131092, 0, 1 )
+
+[node name="Spawner2" type="Node2D" parent="."]
+position = Vector2( 1352, -1248 )
+script = ExtResource( 5 )
+obstacle = ExtResource( 3 )
+timer = 0.4
+firstdelay = 0.0
+therange = 1000
+
+[node name="Sprite" type="Sprite" parent="Spawner2"]
+visible = false
+modulate = Color( 1, 1, 1, 0.356863 )
+texture = ExtResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( -283, 38 )
+rotation = 1.85703
+scale = Vector2( 1, 1 )
+
+[node name="Goal" type="Sprite" parent="Area2D"]
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -7.01511, 58.9818 )
+shape = SubResource( 22 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2( -1.17145, -234.198 )
+polygon = PoolVector2Array( -1.91865, 0.564606, 97.5936, 112.002, -100.093, 109.724 )
+
+[node name="RestartArea2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2789, -531 )
+scale = Vector2( 10, 100 )
+sceneName = "Level2"
+
+[node name="RestartArea" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1231, 483 )
+scale = Vector2( 200, 10 )
+sceneName = "Level2"
+
+[node name="RestartArea3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1370, -1434 )
+scale = Vector2( 200, 10 )
+sceneName = "Level2"
+
+[node name="RestartArea4" parent="." instance=ExtResource( 7 )]
+position = Vector2( -727, -540 )
+scale = Vector2( 10, 100 )
+sceneName = "Level2"
